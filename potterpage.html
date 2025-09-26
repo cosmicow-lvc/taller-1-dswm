@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/src/style.css" rel="stylesheet">
+    <title>wiki Harry Potter</title>
+
+    <style>
+        body.mobile { background-color: #f0f8ff; }
+        body.tablet { background-color: #e6ffe6; }
+        body.desktop { background-color: #fff0f5; }
+
+        nav {
+            display: none;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        nav.show {
+            display: block;
+        }
+
+        #menu-toggle {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+    </style>
+<style type="text/css" id="operaUserStyle"></style></head>
+<body class="mobile">
+
+    <button id="menu-toggle">☰</button>
+    <nav id="menu" class="">
+        <a href="#">Inicio</a>
+        <a href="#">Servicios</a>
+        <a href="#">Contacto</a>
+    </nav>
+
+    <h1>Bienvenido a la página responsive</h1>
+    <p>Redimensiona la ventana para ver los cambios de estilo según el dispositivo.</p>
+    <div class="container"> <h1> Parrafo 1 </h1>  <h1> Parrafo 2 </h1>  <h1> Parrafo 3 </h1> </div>
+    
+    <script>
+        // Función para detectar tamaño de pantalla
+        function detectarDispositivo() {
+            const width = window.innerWidth;
+
+            if (width < 768) {
+                return 'mobile';
+            } else if (width < 1024) {
+                return 'tablet';
+            } else {
+                return 'desktop';
+            }
+        }
+
+        // Aplicar clase al body según viewport
+        function actualizarDispositivo() {
+            const dispositivo = detectarDispositivo();
+            document.body.className = dispositivo;
+            console.log(`Dispositivo: ${dispositivo}`);
+        }
+
+        window.addEventListener('resize', actualizarDispositivo);
+        document.addEventListener('DOMContentLoaded', actualizarDispositivo);
+
+        // Menú responsive
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('show');
+            menuToggle.textContent = menu.classList.contains('show') ? '✕' : '☰';
+        });
+
+        // Cerrar menu al hacer click fuera
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+                menu.classList.remove('show');
+                menuToggle.textContent = '☰';
+            }
+        });
+    </script>
+    
+    </body>
+</body>
+
+</body>
+</html>
