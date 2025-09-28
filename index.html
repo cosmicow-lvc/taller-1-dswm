@@ -1,55 +1,92 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>InfoMóvil 📱 - Inicio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>InfoMóvil 📱</title>
 </head>
-<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
-
-  <!-- Header -->
-  <header class="bg-blue-600 text-white p-4 text-center shadow">
-    <h1 class="text-2xl md:text-3xl font-bold">Bienvenido a InfoMóvil 📱</h1>
-    <p class="text-sm md:text-base">Elige una sección para explorar</p>
-  </header>
-
-  <!-- Main -->
-  <main class="flex-1 flex items-center justify-center p-6">
-    <div class="grid gap-8 md:grid-cols-2 w-full max-w-4xl">
-
-      <!-- Opción Pokédex -->
-      <a href="pokemonPage.html" 
-         class="block bg-red-500 text-white p-6 rounded-2xl shadow hover:bg-red-600 transition transform hover:scale-105 text-center">
-        <h2 class="text-xl font-bold mb-2">Pokédex</h2>
-        <p>Explora Pokémon, sus tipos y habilidades.</p>
-      </a>
-
-      <!-- Opción Harry Potter -->
-      <a href="potterpage.html" 
-         class="block bg-yellow-600 text-white p-6 rounded-2xl shadow hover:bg-yellow-700 transition transform hover:scale-105 text-center">
-        <h2 class="text-xl font-bold mb-2">MiniWiki Harry Potter</h2>
-        <p>Descubre personajes, hechizos y libros.</p>
-      </a>
-
-      <a href="bolaMagica.html" 
-         class="block bg-blue-600 text-white p-6 rounded-2xl shadow hover:bg-blue-700 transition transform hover:scale-105 text-center">
-        <h2 class="text-xl font-bold mb-2">Bola magica</h2>
-        <p>Adivina tu suerte</p>
-      </a>
-
-      <a href="gatos.html" 
-         class="block bg-green-600 text-white p-6 rounded-2xl shadow hover:bg-green-700 transition transform hover:scale-105 text-center">
-        <h2 class="text-xl font-bold mb-2">Gatos</h2>
-        <p>relajate con las mejores imagenes de gatos</p>
-      </a>
-
-    </div>
-  </main>
-
-  <footer class="bg-gray-800 text-white p-4 text-center">
-    <p>&copy; 2025 InfoMóvil 📱</p>
-  </footer>
-
+<body class="flex flex-col min-h-screen">
+    <header>
+        <div id="navbar" class="bg-gray-800 text-white px-4 py-3 flex flex-col md:flex-row md:items-center md:justify-between">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">📱</span>
+                    <span class="text-xl font-bold tracking-wide">InfoMóvil</span>
+                </div>
+                <button id="nav-toggle" class="md:hidden focus:outline-none" aria-label="Abrir menú">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav id="nav-menu" class="mt-2 md:mt-0 md:flex md:items-center space-y-2 md:space-y-0 md:space-x-6 hidden md:block">
+                <a href="#" class="block px-2 py-1 rounded hover:bg-gray-700 transition-colors active:bg-blue-600">Inicio</a>
+                <a href="#" class="block px-2 py-1 rounded hover:bg-gray-700 transition-colors">Bola Mágica</a>
+                <a href="#" class="block px-2 py-1 rounded hover:bg-gray-700 transition-colors">Gatos</a>
+                <a href="#" class="block px-2 py-1 rounded hover:bg-gray-700 transition-colors">Pokemón</a>
+                <a href="#" class="block px-2 py-1 rounded hover:bg-gray-700 transition-colors">Harry Potter</a>
+            </nav>
+        </div>
+    </header>
+    <main class="">
+        <div class="bg-gray-800 p-4 text-white grid gap-2 md:grid-cols-2">
+            <span class="p-3 flex flex-col justify-center">
+                <h1 class="text-5xl font-bold p-2">InfoMóvil - Tu portal de información</h1>
+                <p class="p-2">Explora nuestras secciones: Bola Mágica, Gatos, Pokémon y Harry Potter</p>
+            </span>
+            <span class="flex items-center justify-center">
+                <img class="w-full h-auto max-w-md md:max-w-lg lg:max-w-xl rounded-lg object-cover" src="media/land.png">
+            </span>
+        </div>
+        <section class="py-12 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Explora Nuestro Contenido</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <img src="media/bola.jpg" alt="Bola Mágica" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3 text-gray-800">🔮 Bola Mágica</h3>
+                            <p class="text-gray-600 mb-4 text-sm">¿No sabes tomar tus propias decisiones? Consulta con nuestra bola mágica y deja que ella decida tu destino.</p>
+                            <button class="w-full bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-colors">Consultar</button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <img src="media/gatos.jpg" alt="Gatos Motivacionales" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3 text-gray-800">🐱 Gatos Motivacionales</h3>
+                            <p class="text-gray-600 mb-4 text-sm">Fotos adorables de gatos con frases que te animarán el día y te llenarán de energía positiva.</p>
+                            <button class="w-full bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors">Ver Clima</button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <img src="media/pokemon.jpg" alt="Pokémon" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3 text-gray-800">⚡ Pokémon</h3>
+                            <p class="text-gray-600 mb-4 text-sm">Explora el mundo Pokémon y descubre las características y atributos de tus pokemones favoritos.</p>
+                            <button class="w-full bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 transition-colors">Explorar</button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <img src="media/harry_potter.png" alt="Harry Potter" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3 text-gray-800">⚡ Harry Potter</h3>
+                            <p class="text-gray-600 mb-4 text-sm">Sumérgete en el mundo mágico de Harry Potter y conoce mejor a sus personajes, descubriendo sus historias y secretos.</p>
+                            <button class="w-full bg-violet-600 text-white px-4 py-2 rounded hover:bg-violet-700 transition-colors">Descubrir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-gray-800 text-white p-4 text-center">
+        <p>&copy; 2025 InfoMóvil</p>
+    </footer>
 </body>
+<script>
+
+</script>
+<script src="js/script.js"></script>
 </html>

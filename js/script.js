@@ -78,7 +78,7 @@ function mostrarInfoInline(item, pElem) {
 
   let contenido = "";
 
- if (tipoActual === "personajes") {
+  if (tipoActual === "personajes") {
     contenido = `
     <div class="flex flex-col md:flex-row items-center justify-center gap-4 p-4 border rounded shadow">
       <div class="flex-1 md:w-1/2">    
@@ -100,7 +100,7 @@ function mostrarInfoInline(item, pElem) {
       <h2 class="text-xl font-bold mb-2">${item.hechizo}</h2>
       <p><strong>Efecto:</strong> ${item.uso || "Desconocido"}</p>
     </div>
-     
+      
     `;
   } else if( tipoActual === "libros") {
     contenido = `
