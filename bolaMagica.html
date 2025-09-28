@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bola Mágica</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css"> 
 </head>
 <body class="bg-gray-100 font-sans">
 
@@ -20,98 +21,29 @@
             <label for="pregunta-magica" class="block mb-2 text-lg font-medium text-gray-900">
                 Prueba tu suerte:
             </label>
-            <input type="text" id="pregunta-magica" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg p-2.5 w-full max-w-md mx-auto" placeholder="¿aprobaré webmovil?">
+            <input type="text" id="pregunta-magica" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg p-2.5 max-w-md mx-auto" placeholder="¿aprobaré webmovil?">
             <button id="ask-button" class="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg">
                 Consultar
             </button>
         </div>
 
-        <div id="carteles-container" class="flex flex-col md:flex-row justify-around gap-4 mt-8">
+        <div id="carteles-container" class="flex justify-around gap-4 mt-8">
             
-            <div id="cartel-negativo" class="border-4 border-red-500 rounded-lg p-6 w-full md:w-1/3 min-h-[150px] bg-red-100 flex items-center justify-center">
+            <div id="cartel-negativo" class="cartel border-4 border-red-500 rounded-lg p-6 min-h-[150px] bg-red-100 flex items-center justify-center">
                 <p class="text-center text-xl font-semibold text-red-800"></p>
             </div>
             
-            <div id="cartel-neutral" class="border-4 border-gray-500 rounded-lg p-6 w-full md:w-1/3 min-h-[150px] bg-gray-100 flex items-center justify-center">
+            <div id="cartel-neutral" class="cartel border-4 border-gray-500 rounded-lg p-6 min-h-[150px] bg-gray-100 flex items-center justify-center">
                 <p class="text-center text-xl font-semibold text-gray-800"></p>
             </div>
             
-            <div id="cartel-positivo" class="border-4 border-green-500 rounded-lg p-6 w-full md:w-1/3 min-h-[150px] bg-green-100 flex items-center justify-center">
+            <div id="cartel-positivo" class="cartel border-4 border-green-500 rounded-lg p-6 min-h-[150px] bg-green-100 flex items-center justify-center">
                 <p class="text-center text-xl font-semibold text-green-800"></p>
             </div>
             
         </div>
     </main>
 
-    <script>
-        const preguntaInput = document.getElementById('pregunta-magica')
-        const botonPregunta = document.getElementById('ask-button')
-        const cartelNegativo = document.getElementById('cartel-negativo').querySelector('p')
-        const cartelPositivo = document.getElementById('cartel-positivo').querySelector('p')
-        const cartelNeutral = document.getElementById('cartel-neutral').querySelector('p')
-
-        let respuestasPositivas=[]
-        let respuestasNegativas = []
-        let respuestasNeutras = []
-
-        async function fetchRespuestasPorCategoria(){
-            try{
-                const url = 'https://corsproxy.io/?' + encodeURIComponent('https://www.eightballapi.com/api/categories?locale=es')
-                const response = await fetch(url)
-                const data = await response.json()
-
-                respuestasNegativas = data.negative
-                respuestasPositivas = data.positive
-                respuestasNeutras = data.neutral
-
-            }catch(error){
-                console.error("No se pudieron cargar las categorías de respuestas.", error)
-                cartelNeutral.textContent = "No se pudo conectar con la Bola 8."
-            }
-
-        }
-
-        function resetearContenidoCarteles() {
-            cartelNegativo.textContent = ''
-            cartelPositivo.textContent = ''
-            cartelNeutral.textContent = ''
-        }
-
-        async function obtenerRespuestaDeLaBola() {
-            const pregunta = preguntaInput.value;
-            if (!pregunta) {
-                alert("Por favor, escribe una pregunta.")
-                return;
-            }
-            resetearContenidoCarteles();
-            cartelNeutral.textContent = "Pensando..."
-                    
-            try {
-                const url = 'https://corsproxy.io/?' + encodeURIComponent('https://www.eightballapi.com/api?locale=es')
-                const response = await fetch(url);
-                const data = await response.json();
-                const respuestaDeLaBola = data.reading;
-
-                resetearContenidoCarteles();
-
-                if (respuestasPositivas.includes(respuestaDeLaBola)) {
-                    cartelPositivo.textContent = respuestaDeLaBola
-
-                }else if(respuestasNegativas.includes(respuestaDeLaBola)) {
-                    cartelNegativo.textContent = respuestaDeLaBola
-                }else{
-                    cartelNeutral.textContent = respuestaDeLaBola
-                }
-
-                } catch (error) {
-                    resetearContenidoCarteles();
-                    cartelNeutral.textContent = `Error: ${error.message}`
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", fetchRespuestasPorCategoria)
-        botonPregunta.addEventListener("click", obtenerRespuestaDeLaBola)
-
-    </script>
+    <script src="scriptBolaMagica.js" defer></script>
 </body>
 </html>
