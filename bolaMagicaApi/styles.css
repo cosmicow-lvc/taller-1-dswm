@@ -1,15 +1,69 @@
-#carteles-container {
-  flex-direction: column; 
-}
-.cartel {
-  width: 100%;
+/* default movil */
+.image-container {
+    width: 100%;
+    max-width: 20rem;
+    aspect-ratio: 1 / 1;
+    height: auto;
 }
 
+.cartel {
+    width: 65%;
+    max-width: 280px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* tablet */
 @media (min-width: 768px) {
-  #carteles-container {
-    flex-direction: row;
-  }
-  .cartel {
-    width: 33.333333%;
-  }
+
+    .image-container {
+        max-width: 24rem;
+    }
+
+    .cartel p {
+        font-size: 1.25rem; 
+        line-height: 1.75rem;
+    }
+
+    label[for="pregunta-magica"] {
+        font-size: 1.25rem; 
+    }
+
+    #pregunta-magica {
+        font-size: 1rem;    
+        padding: 0.75rem;  
+    }
+    #ask-button {
+        font-size: 1rem;       
+        padding: 0.75rem 1.5rem;  
+    }
+}
+
+/* desktop */
+@media (min-width: 1024px) {
+
+    .image-container {
+        max-width: 34rem;
+    }
+
+    .cartel p {
+        font-size: 1.25rem; 
+        line-height: 1.75rem;
+    }
+
+    label[for="pregunta-magica"] {
+        font-size: 1.50rem; 
+    }
+
+    #pregunta-magica {
+        font-size: 1.25rem;    
+        padding: 1rem;  
+    }
+    #ask-button {
+        font-size: 1.25rem;       
+        padding: 1rem 1.75rem;  
+    }
 }
