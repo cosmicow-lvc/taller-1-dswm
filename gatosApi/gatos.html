@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>InfoMóvil 📱</title>
+</head>
+<body class="flex flex-col min-h-screen">
+    <header>
+        <div id="navbar" class="bg-gray-800 text-white px-4 py-3 flex flex-col md:flex-row md:items-center md:justify-between">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">📱</span>
+                    <span class="text-xl font-bold tracking-wide">InfoMóvil</span>
+                </div>
+                <button id="nav-toggle" class="md:hidden focus:outline-none" aria-label="Abrir menú">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav id="nav-menu" class="mt-2 md:mt-0 md:flex md:items-center space-y-2 md:space-y-0 md:space-x-6 hidden md:block">
+                <a href="../index.html" class="block px-2 py-1 rounded hover:bg-gray-700 transition-colors active:bg-blue-600">Inicio</a>
+                <a href="../bolaMagicaApi/bolaMagica.html" class="block px-2 py-1 rounded hover:bg-gray-700 transition-colors">Bola Mágica</a>
+                <a href="../gatosApi/gatos.html" class="block px-2 py-1 rounded hover:bg-gray-700 transition-colors">Gatos</a>
+                <a href="../pokeApi/pokemonPage.html" class="block px-2 py-1 rounded hover:bg-gray-700 transition-colors">Pokemón</a>
+                <a href="../potterApi/potterpage.html" class="block px-2 py-1 rounded hover:bg-gray-700 transition-colors">Harry Potter</a>
+            </nav>
+        </div>
+    </header>
+    <main class="flex-1 flex flex-col items-center justify-center p-6">
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">🐱 Gatos Motivadores</h1>
+            <p class="text-gray-600">Fotos adorables de gatos con frases que te animarán el día</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-xl p-8 max-w-2xl w-full">
+            <div class="flex justify-center">
+                <img id="mainImage" class="rounded-xl shadow-lg max-w-full h-auto max-h-96 object-cover transition-all duration-300 hover:shadow-xl" src="https://cataas.com/cat" alt="Gato motivador">
+            </div>
+        </div>
+        <button class="m-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg" onclick=cambiarFoto()>¡¡Generar gato!!</button>
+    </main>
+</body>
+<script src="scriptGatos.js"></script>
+</html>
