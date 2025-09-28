@@ -1,0 +1,15 @@
+#carteles-container {
+  flex-direction: column; 
+}
+.cartel {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  #carteles-container {
+    flex-direction: row;
+  }
+  .cartel {
+    width: 33.333333%;
+  }
+}
