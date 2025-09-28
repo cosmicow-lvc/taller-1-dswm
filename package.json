@@ -1,0 +1,24 @@
+{
+  "name": "taller-1-dswm",
+  "version": "1.0.0",
+  "description": "**Grupo 4**\r 1. Máximo Jofré, 21675371-2\r 2. Sofía Contreras, 21702328-9\r 3. Diego Adaos, 21535504-7\r 4. Antonio Tabilo, 21668377-3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cosmicow-lvc/taller-1-dswm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cosmicow-lvc/taller-1-dswm/issues"
+  },
+  "homepage": "https://github.com/cosmicow-lvc/taller-1-dswm#readme",
+  "dependencies": {
+    "tailwindcss": "^4.1.13"
+  }
+}

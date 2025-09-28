@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/styles.css">
+    <title>InfoMóvil 📱</title>
+
+   
+    
+</head>
+<body class="flex flex-col min-h-screen">
+    <header>
+        <div id="navbar" class="bg-gray-800 text-white px-4 py-3 flex flex-col md:flex-row md:items-center md:justify-between">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">📱</span>
+                    <span class="text-xl font-bold tracking-wide">InfoMóvil 📱</span>
+                </div>
+                <button id="nav-toggle" class="md:hidden focus:outline-none" aria-label="Abrir menú">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <nav id="nav-menu" class="mt-2 md:mt-0 md:flex md:items-center space-y-2 md:space-y-0 md:space-x-6 hidden md:block">
+                <a href="#" class="block px-2 py-1 rounded hover:bg-gray-700 transition-colors active:bg-blue-600">Inicio</a>
+                <a href="#" class="block px-2 py-1 rounded hover:bg-gray-700 transition-colors">Noticias</a>
+                <a href="#" class="block px-2 py-1 rounded hover:bg-gray-700 transition-colors">Clima</a>
+                <a href="#" class="block px-2 py-1 rounded hover:bg-gray-700 transition-colors">Harry Potter</a>
+                <a href="#" class="block px-2 py-1 rounded hover:bg-gray-700 transition-colors">Gatos</a>
+            </nav>
+            </div>
+       
+           
+        </div>
+    </header>
+    <main class="">
+         <div id="navbar2" class="bg-red-800 text-white px-4 py-3 flex flex-col md:flex-row md:items-center md:justify-between">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    
+                    <span class="text-xl font-bold tracking-wide">MiniWiki Harry Potter en español</span>
+                </div>
+
+                <button id="nav-toggle2" class="md:hidden focus:outline-none" aria-label="Abrir menú">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div>
+                <nav id="nav-menu2" class="mt-2 md:mt-0 md:flex md:items-center space-y-2 md:space-y-0 md:space-x-6 hidden md:block">
+                    <a href="#" id="nav-personajes" class="block px-2 py-1 rounded hover:bg-gray-700 transition-colors text-white">Personajes</a>
+                    <a href="#" id="nav-hechizos" class="block px-2 py-1 rounded hover:bg-gray-700 transition-colors">Hechizos</a>
+                    <a href="#" id="nav-libros" class="block px-2 py-1 rounded hover:bg-gray-700 transition-colors">Libros</a>
+                </nav>
+
+            
+            </div>
+           
+        </div>
+    <!-- Buscador de personajes -->
+        <div class="flex items-center justify-center mt-6 px-4">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    class="w-full md:w-1/2 p-2 border rounded-md focus:outline-none focus:ring-2 "
+                />
+        </div>
+    
+    <div id="infoPersonaje" class=" border-t mt-6 px-4"></div> 
+    <div id="demo" class="p-4 grid gap-2"></div>
+    
+
+  
+    <!-- logo de coyright ¿Por qué? Porque k página mas buena-->
+    </main>
+    <footer class="bg-gray-800 text-white p-4 text-center">
+        <p>&copy; 2025 InfoMóvil</p>
+    </footer>
+    <!-- llamado al script -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>
