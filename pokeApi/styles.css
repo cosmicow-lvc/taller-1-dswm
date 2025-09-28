@@ -1,0 +1,197 @@
+
+.tipo-normal { background-color: #A8A77A; color: black;}
+.tipo-fire { background-color: #EE8130; color: black;}
+.tipo-water { background-color: #6390F0; color: black;}
+.tipo-grass { background-color: #7AC74C; color: black;}
+.tipo-electric { background-color: #F7D02C; color: black;}
+.tipo-ice { background-color: #96D9D6; color: black;}
+.tipo-fighting { background-color: #C22E28; color: black; }
+.tipo-poison { background-color: #A33EA1; color: black; }
+.tipo-ground { background-color: #E2BF65; color: black;}
+.tipo-flying { background-color: #A98FF3; color: black;}
+.tipo-psychic { background-color: #F95587; color: black;}
+.tipo-bug { background-color: #A6B91A; color: black;; }
+.tipo-rock { background-color: #B6A136; color: black;}
+.tipo-ghost { background-color: #735797; color: black; }
+.tipo-dragon { background-color: #6F35FC; color: black; }
+.tipo-dark { background-color: #705746; color: black; }
+.tipo-steel { background-color: #B7B7CE; color: black;}
+.tipo-fairy { background-color: #D685AD; color: black;}
+
+.card {
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  background-color: rgba(255,255,255,0.8);
+  border: 1px solid #000;
+  font-size: 0.75rem;
+  margin: 0.1rem;
+  text-align: center;
+}
+
+.badge-name {
+  font-weight: bold;
+  font-size: 0.875rem;
+  text-transform: capitalize;
+  margin-top: 0.25rem;
+  color:#000;
+}
+
+.badge-icon {
+  display: inline-block;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid #000;
+  background-color: rgba(255,255,255,0.5);
+}
+
+.badge-grass { background-color: #388E3C; }
+.badge-fire { background-color: #D32F2F; }
+.badge-water { background-color: #1976D2; }
+.badge-electric { background-color: #FBC02D; }
+.badge-ice { background-color: #0288D1; }
+.badge-fighting { background-color: #C2185B; }
+.badge-poison { background-color: #7B1FA2; }
+.badge-ground { background-color: #6D4C41; }
+.badge-flying { background-color: #5E35B1; }
+.badge-psychic { background-color: #F57C00; }
+.badge-bug { background-color: #388E3C; }
+.badge-rock { background-color: #795548; }
+.badge-ghost { background-color: #512DA8; }
+.badge-dragon { background-color: #303F9F; }
+.badge-dark { background-color: #212121; }
+.badge-steel { background-color: #607D8B; }
+.badge-fairy { background-color: #D81B60; }
+.badge-normal { background-color: #9E9E9E; }
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+#status {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+#detalle {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+#detalle img {
+  width: 128px;
+  height: 128px;
+  margin-bottom: 1rem;
+}
+#detalle h2 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+#detalle p {
+  margin-bottom: 0.5rem;
+}
+#detalle .abilities span {
+  padding: 0.25rem 0.5rem;
+  background-color: #E5E7EB;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  margin: 0.15rem;
+}
+
+button {
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+button:hover {
+  filter: brightness(90%);
+}
+#btn-cargar-mas {
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  background-color: #EF4444; /* rojo */
+  color: white;
+}
+#btn-cargar-mas:hover {
+  background-color: #DC2626;
+}
+#btn-volver {
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  background-color: #EF4444;
+  color: white;
+}
+#btn-volver:hover {
+  background-color: #DC2626;
+}
+
+#buscador {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  margin: 0 auto 1rem auto;
+  display: block;
+  font-size: 1rem;
+}
+#buscador:focus {
+  outline: none;
+  border-color: #EF4444;
+  box-shadow: 0 0 0 2px rgba(239,68,68,0.3);
+}
+
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: #555;
+  background-color: #F3F4F6;
+}
+
+@media (min-width: 640px) {
+  .card img { width: 96px; height: 96px; }
+}
+@media (min-width: 768px) {
+  .card img { width: 112px; height: 112px; }
+}
+@media (min-width: 1024px) {
+  .card img { width: 128px; height: 128px; }
+}
+
+.detalle-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
