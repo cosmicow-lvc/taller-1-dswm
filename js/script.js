@@ -47,7 +47,7 @@ function mostrarLista(lista) {
 
   lista.forEach(item => {
     const pElem = document.createElement("p");
-    pElem.className = "border-b py-1 cursor-pointer hover:bg-gray-100";
+    pElem.className = "border-b py-1 cursor-pointer hover:bg-[#5B0000] text-white";
     //pElem.textContent = tipoActual === "personajes" ? item.personaje : item.hechizo;
     if (tipoActual === "libros") {
         pElem.textContent = item.libro;
@@ -74,7 +74,7 @@ function mostrarInfoInline(item, pElem) {
 
   // Crear el div con la info
   const infoDiv = document.createElement("div");
-  infoDiv.className = "info-inline p-2 border rounded my-1 bg-gray-50";
+  infoDiv.className = "info-inline p-2 border rounded my-1 bg-white bg-opacity-90";
 
   let contenido = "";
 
@@ -104,8 +104,8 @@ function mostrarInfoInline(item, pElem) {
     `;
   } else if( tipoActual === "libros") {
     contenido = `
-    <div class="p-4 border rounded shadow">
-        <h2 class="text-xl font-bold mb-2">${item.id} ${ item.libro} </h2>
+    <div class="p-4 border rounded shadow text-black">
+        <h2 class="text-xl font-bold mb-2 ">${item.id} ${ item.libro} </h2>
       <p><strong>Título en inglés:</strong> ${item.titulo_original || "Desconocido"}</p>
       <p><strong>Fecha de lanzamiento:</strong> ${item.fecha_de_lanzamiento || "Desconocido"}</p>
       <p><strong>Autor(a):</strong> ${item.autora || "Desconocido"}</p>
@@ -144,17 +144,17 @@ function setNavActivo(tipo) {
   const navHechizos = document.getElementById("nav-hechizos");
   const navLibros = document.getElementById("nav-libros");
   if (tipo === "personajes") {
-    navPersonajes.classList.add("bg-blue-600", "text-white");
-    navHechizos.classList.remove("bg-blue-600", "text-white");
-    navLibros.classList.remove("bg-blue-600", "text-white");
+    navPersonajes.classList.add("bg-[#5B0000]", "text-white");
+    navHechizos.classList.remove("bg-[#5B0000]", "text-white");
+    navLibros.classList.remove("bg-[#5B0000]", "text-white");
   } else if (tipo === "hechizos") {
-    navHechizos.classList.add("bg-blue-600", "text-white");
-    navPersonajes.classList.remove("bg-blue-600", "text-white");
-    navLibros.classList.remove("bg-blue-600", "text-white");
+    navHechizos.classList.add("bg-[#5B0000]", "text-white");
+    navPersonajes.classList.remove("bg-[#5B0000]", "text-white");
+    navLibros.classList.remove("bg-[#5B0000]", "text-white");
   } else{
-    navHechizos.classList.remove("bg-blue-600", "text-white");
-    navPersonajes.classList.remove("bg-blue-600", "text-white");
-    navLibros.classList.add("bg-blue-600", "text-white");
+    navHechizos.classList.remove("bg-[#5B0000]", "text-white");
+    navPersonajes.classList.remove("bg-[#5B0000]", "text-white");
+    navLibros.classList.add("bg-[#5B0000]", "text-white");
   }
 
 }
@@ -173,7 +173,21 @@ document.getElementById("nav-libros").addEventListener("click", (e) => {
   e.preventDefault();
   cargarDatos("libros");
 });
-
+// Toggle menú responsive
+const navToggle = document.getElementById('nav-toggle');
+const navMenu = document.getElementById('nav-menu');
+if (navToggle && navMenu) { 
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('hidden');
+});
+}
+const navToggle2 = document.getElementById('nav-toggle2');
+const navMenu2 = document.getElementById('nav-menu2');
+if (navToggle2 && navMenu2) { 
+    navToggle2.addEventListener('click', () => {
+        navMenu2.classList.toggle('hidden');
+});
+}
 // Carga inicial de personajes
 cargarDatos("personajes");
 
