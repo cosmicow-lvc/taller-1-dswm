@@ -173,14 +173,7 @@ document.getElementById("nav-libros").addEventListener("click", (e) => {
   e.preventDefault();
   cargarDatos("libros");
 });
-// Toggle menú responsive
-const navToggle = document.getElementById('nav-toggle');
-const navMenu = document.getElementById('nav-menu');
-if (navToggle && navMenu) { 
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('hidden');
-});
-}
+
 const navToggle2 = document.getElementById('nav-toggle2');
 const navMenu2 = document.getElementById('nav-menu2');
 if (navToggle2 && navMenu2) { 

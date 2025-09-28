@@ -81,14 +81,5 @@ async function obtenerRespuestaDeLaBola() {
     }
 }
 
-const navToggle = document.getElementById("nav-toggle");
-const navMenu = document.getElementById("nav-menu");
-
-if (navToggle && navMenu) {
-  navToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("hidden");
-  });
-}
-
 document.addEventListener("DOMContentLoaded", fetchRespuestasPorCategoria)
 botonPregunta.addEventListener("click", obtenerRespuestaDeLaBola)
