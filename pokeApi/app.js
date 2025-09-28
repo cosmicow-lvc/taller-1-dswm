@@ -151,4 +151,13 @@ btnVolver.addEventListener("click", () => {
 btnCargarMas.addEventListener("click", cargarPokemones);
 buscador.addEventListener("input", renderizarPokemones);
 
+const navToggle = document.getElementById("nav-toggle");
+const navMenu = document.getElementById("nav-menu");
+
+if (navToggle && navMenu) {
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("hidden");
+  });
+}
+
 cargarPokemones();
